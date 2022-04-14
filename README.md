@@ -15,7 +15,7 @@ ESRI ジャパンで提供している、「[シェープファイル文字コ�
 
 裏を返せば、国内で一部のシェープファイル で文字化けが発生するのは、
 
-- dBASE ファイルの LDID（Language driver ID）が存在しない（値が0）
+- dBASE ファイルの LDID（Language driver ID）が存在しない（値が00）
 - オプションの *.cpg ファイル が提供されていない
 
 の両方があてはまる場合であるとも言えます。
@@ -31,20 +31,23 @@ Byte|Contents|Description|
 :---|:---|:---|
 29|1 byte|Language driver ID(LDID).|
 
-### ArcGIS で作成した シェープファイル
+### ArcGIS で作成した シェープファイル の仕様
 一方、LDID（Language driver ID） の値としてどのような値が記録されているのかを、ArcGIS で作成したシェープファイルを例にして見てみます。
-- ArcGIS で作成したシェープファイル の場合：
+- ArcGIS で作成したShift-JIS のシェープファイル の場合：
  dBASE ファイル の LDID（Language driver ID）をバイナリエディターを使って確認してみると、Shift-JIS のシェープファイルの場合、次図のようにdBASE ファイル の LDID（Language driver ID） は`13` に設定されています。*.cpg ファイルは作成されません。
 
   ![ArcGIS-SJIS-LDID](./image/dbf_ldid_sjis.png)
   
 
 - ArcGIS で作成したUTF-8 のシェープファイルの場合：
- dBASE ファイル の LDID（Language driver ID） は`0` が設定されています。また、*.cpg ファイルが作成され、そのファイルの中に`UTF-8` と記録されています。
+ dBASE ファイル の LDID（Language driver ID） は`00` が設定されています。また、*.cpg ファイルが作成され、そのファイルの中に`UTF-8` と記録されています。
 
   ![ArcGIS-UTF8-LOID](./image/dbf_ldid_utf8.png)
   ![ArcGIS-UTF8-CPGFILE](./image/cpg_utf8.png)
 
+確かに「[シェープファイルの文字コードに関する注意](https://esrij-esri-support.custhelp.com/app/answers/detail/a_id/5411/session/L2F2LzEvdGltZS8xNjQ5OTA3MDM4L2dlbi8xNjQ5OTA3MDM4L3NpZC9mVTVUeVdEMVZBWUg3dFNWV2VZNU9ad3BTN05DOVZxcUMyZ1hGaFlnZktMcG1FMzZpZ192MyU3RUdUbDNDUFd0QXVhWnJ6RjBkcGREamlNeW9OQVhFbXRpbmJNVWJsQ3NpVGZIcDBtZGUweTJWRjZQdmpkR21PeDQyQSUyMSUyMQ%3D%3D)」 の 既存のシェープファイルの文字コードを確認する方法 に記載がある状態になっているようです。
+  
+  
 **※** LDID（Language driver ID）と Codepage の値の対応は、[Shapefile C Library のcodepage.html](http://shapelib.maptools.org/codepage.html) にまとまっています。
 
 
@@ -55,6 +58,10 @@ Byte|Contents|Description|
 
 - [shapefile_ldid_cpg_info.ipynb](https://github.com/EsriJapan/shapefile_info/blob/main/shapefile_ldid_cpg_info.ipynb )
 
+なお、*.cpg ファイル の手動での作成方法は、[問題：シェープファイルや DBF ファイルが文字化けする](https://esrij-esri-support.custhelp.com/app/answers/detail/a_id/5850)  に記載がありますので、そちらをご参照ください。  
+
+また、LDID（Language driver ID）は『 [シェープファイルの技術情報](http://www.esrij.com/cgi-bin/wp/wp-content/uploads/documents/shapefile_j.pdf) 』の中では、「言語ドライバ ID」として記載されているものです。
+  
 
 ## 参考情報
 
@@ -79,7 +86,7 @@ Byte|Contents|Description|
 * ディレクトリ内のファイルを操作するさまざまな方法の例；   
   https://realpython.com/working-with-files-in-python/
   
-
+  
 ## 免責事項
 * 本リポジトリに含まれるノートブック ファイルはサンプルとして提供しているものであり、動作に関する保証、および製品ライフサイクルに従った Esri 製品サポート サービスは提供しておりません。
 * 本ツールに含まれるツールによって生じた損失及び損害等について、一切の責任を負いかねますのでご了承ください。
