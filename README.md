@@ -51,12 +51,17 @@ Byte|Contents|Description|
 **※** LDID（Language driver ID）と Codepage の値の対応は、[Shapefile C Library のcodepage.html](http://shapelib.maptools.org/codepage.html) にまとまっています。
 
 
-## サンプル ノートブック
+## サンプル ノートブック と サンプル Python ツールボックス
 
-シェープファイル または dBase ファイル の LDID（Language driver ID）と*.cpg ファイル を一覧表示する処理と、*.cpg ファイルを一括で作成するノートブックを公開しています。ファイル一式は、[こちらから](https://github.com/EsriJapan/shapefile_info/archive/refs/heads/main.zip) 入手可能です。
+シェープファイル または dBase ファイル の LDID（Language driver ID）と*.cpg ファイル を一覧表示する処理と、*.cpg ファイルを一括で作成するノートブックと[Python ツールボックス](https://pro.arcgis.com/ja/pro-app/latest/arcpy/geoprocessing_and_python/a-quick-tour-of-python-toolboxes.htm) を公開しています。  
+ファイル一式は、[こちらから](https://github.com/EsriJapan/shapefile_info/archive/refs/heads/main.zip) 入手可能です。
 **※** 動作環境としては Python 3.x 系を対象としております。Python 2.x 系では動作しませんのでご注意ください。
 
-- [shapefile_ldid_cpg_info.ipynb](https://github.com/EsriJapan/shapefile_info/blob/main/shapefile_ldid_cpg_info.ipynb )
+- ノートブック: [shapefile_ldid_cpg_info.ipynb](https://github.com/EsriJapan/shapefile_info/blob/main/shapefile_ldid_cpg_info.ipynb )
+  ![SHAPEFILE-INFO-NOTEBOOK](./image/shapefile_info_notebook.png)
+  
+- Python ツールボックス: [Shapefile_info_toolbox.pyt](https://github.com/EsriJapan/shapefile_info/blob/main/Shapefile_info_toolbox.pyt )
+  ![SHAPEFILE-INFO-PYTHON-TOOLBOX](./image/shapefile_info_toolbox.png)
 
 なお、*.cpg ファイル の手動での作成方法は、[問題：シェープファイルや DBF ファイルが文字化けする](https://esrij-esri-support.custhelp.com/app/answers/detail/a_id/5850)  に記載がありますので、そちらをご参照ください。  
 
@@ -65,7 +70,7 @@ Byte|Contents|Description|
 
 ## 参考情報
 
-本サンプル ノートブックを作成するために参考にさせていただいた種々の情報です。
+本サンプル ノートブック や Python ツールボックス を作成するために参考にさせていただいた種々の情報です。
 
 * Python - read shapefile .dbf for encoding（2.x 系）；  
   https://gis.stackexchange.com/questions/52623/python-read-shapefile-dbf-for-encoding
@@ -86,7 +91,12 @@ Byte|Contents|Description|
 * ディレクトリ内のファイルを操作するさまざまな方法の例；   
   https://realpython.com/working-with-files-in-python/
   
-  
+* ArcPy 学習用資料；   
+  https://github.com/EsriJapan/arcpy-resources
+
+* A quick tour of creating tools with Python；   
+  https://pro.arcgis.com/ja/pro-app/latest/arcpy/geoprocessing_and_python/a-quick-tour-of-creating-tools-in-python.htm
+
 ## 免責事項
 * 本リポジトリに含まれるノートブック ファイルはサンプルとして提供しているものであり、動作に関する保証、および製品ライフサイクルに従った Esri 製品サポート サービスは提供しておりません。
 * 本ツールに含まれるツールによって生じた損失及び損害等について、一切の責任を負いかねますのでご了承ください。
