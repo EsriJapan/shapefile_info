@@ -105,7 +105,8 @@ class ShapefileUtil:
         """
         path, dbf_name = os.path.split(dbf) # path と ファイル名を分ける  
         file_name = os.path.splitext(dbf_name)[0]
-        cpg_file_name = "{}.cpg".format(os.path.splitext(file_name)[0])
+        #cpg_file_name = "{}.cpg".format(os.path.splitext(file_name)[0])
+        cpg_file_name = "{}.cpg".format(file_name)
         cpg_file = os.path.join(path, cpg_file_name)
         bl_exist = os.path.isfile(cpg_file)
         code_value = ""
@@ -121,7 +122,8 @@ class ShapefileUtil:
         """
         path, dbf_name = os.path.split(dbf) # path と ファイル名を分ける  
         file_name = os.path.splitext(dbf_name)[0]
-        cpg_file_name = "{}.cpg".format(os.path.splitext(file_name)[0])
+        #cpg_file_name = "{}.cpg".format(os.path.splitext(file_name)[0])
+        cpg_file_name = "{}.cpg".format(file_name)
         cpg_file = os.path.join(path, cpg_file_name) #フルパス
         with open(cpg_file, 'w', encoding='utf-8') as f: # mode='w' でない場合には作成。既存のものがある場合は上書き
             f.write(cpg_txt)
@@ -133,7 +135,8 @@ class ShapefileUtil:
         """
         path, dbf_name = os.path.split(dbf) # path と ファイル名を分ける  
         file_name = os.path.splitext(dbf_name)[0]
-        cpg_file_name = "{}.cpg".format(os.path.splitext(file_name)[0])
+        #cpg_file_name = "{}.cpg".format(os.path.splitext(file_name)[0])
+        cpg_file_name = "{}.cpg".format(file_name)
         cpg_file = os.path.join(path, cpg_file_name) #フルパス
         if os.path.isfile(cpg_file): # 存在する場合に削除
             os.remove(cpg_file)
