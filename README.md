@@ -4,7 +4,8 @@
 
 ## 概要
 
-<!--「[操作手順: 各種コード ページでエンコードされたシェープファイルと dBASE ファイルを読み書きする](https://support.esri.com/ja/technical-article/000013192)」-->「[HOW TO: Read and write shapefile and dBASE files encoded in various code pages](https://support.esri.com/en-us/knowledge-base/how-to-read-and-write-shapefile-and-dbase-files-encoded-000013192)」  の技術文章で記載しているように、ArcGIS の
+<!--「[操作手順: 各種コード ページでエンコードされたシェープファイルと dBASE ファイルを読み書きする](https://support.esri.com/ja/technical-article/000013192)」-->  
+「[HOW TO: Read and write shapefile and dBASE files encoded in various code pages](https://support.esri.com/en-us/knowledge-base/how-to-read-and-write-shapefile-and-dbase-files-encoded-000013192)」の技術文章で記載しているように、ArcGIS の
 dBASE ファイルのコード ページ変換機能 (名称: `dbfDefault`) は、システム レジストリにコード ページ値を指定してアクティブ化するものです。
 
 ESRI ジャパンで提供している、「[シェープファイル文字コード設定ユーティリティ](https://doc.esrij.com/pro/get-started/setup/user/addin_tool/#%E3%82%B7%E3%82%A7%E3%83%BC%E3%83%97%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E8%A8%AD%E5%AE%9A%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3)」 は、この `dbfDefault` の設定をユーザーインターフェイス で設定するためのツールです。
